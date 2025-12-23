@@ -15,15 +15,4 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-  server: {
-    proxy: {
-      '/api/v3': {
-        target: 'https://ark.cn-beijing.volces.com',
-        changeOrigin: true,
-        headers: {
-          Origin: 'https://ark.cn-beijing.volces.com'
-        }
-      }
-    }
-  }
 })
