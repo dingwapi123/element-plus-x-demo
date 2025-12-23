@@ -102,13 +102,14 @@ const handleSubmit = async (content: string) => {
 .app-layout {
   display: flex;
   height: 100vh;
-  width: 100vw;
+  width: 100%; /* Changed from 100vw to 100% to avoid scrollbar */
   background-color: white;
   overflow: hidden;
 }
 
 .app-sidebar {
   flex-shrink: 0;
+  width: 260px; /* Explicitly set width matching Sidebar component */
 }
 
 .main-content {
@@ -117,6 +118,7 @@ const handleSubmit = async (content: string) => {
   flex-direction: column;
   position: relative;
   background-color: white;
+  min-width: 0; /* Important for flex child to handle overflow correctly */
 }
 
 .chat-area {
